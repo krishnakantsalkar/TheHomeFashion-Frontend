@@ -6,8 +6,21 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body>
+  <body
+    [ngStyle]="{
+      'background-color': dark ? 'rgb(48, 46, 46)' : 'white',
+      color: dark ? 'white' : 'rgb(48, 46, 46)'
+    }"
+  >
     <div class="home">
+      <div class="mode">
+        <i
+          class="far fa-lightbulb"
+          (click)="darkmode()"
+          [ngClass]="{ fas: dark }"
+          [ngStyle]="{ color: dark ? 'rgb(48, 46, 46)' : 'black' }"
+        ></i>
+      </div>
       <div class="row">
         <div class="col-4"><h1>some content</h1></div>
         <div class="col-8"><h2>some more content</h2></div>
